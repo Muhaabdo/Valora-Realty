@@ -1,0 +1,326 @@
+/* ==========================================================================
+   Valora Realty — Home page (About Us) sections
+   ========================================================================== */
+
+.vlrh-hero {
+  position: relative;
+  min-height: 78vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 150px 20px 70px;
+  background: linear-gradient(135deg, var(--v-marine) 0%, var(--v-marine-2) 100%);
+  color: #fff;
+  overflow: hidden;
+}
+.vlrh-hero::before {
+  content: "";
+  position: absolute;
+  top: -160px; left: -160px;
+  width: 420px; height: 420px;
+  border-radius: 50%;
+  border: 2px dashed rgba(192,145,62,.18);
+}
+.vlrh-hero::after {
+  content: "";
+  position: absolute;
+  bottom: -200px; right: -140px;
+  width: 460px; height: 460px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.03);
+}
+.vlrh-hero-inner { max-width: 840px; position: relative; z-index: 2; }
+
+.vlrh-hero-eyebrow {
+  display: inline-block;
+  font-family: var(--v-font-display);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--v-gold);
+  border: 1px solid rgba(192,145,62,.45);
+  background: rgba(255,255,255,.04);
+  border-radius: 50px;
+  padding: 7px 18px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(4px);
+  direction: ltr;
+}
+
+.vlrh-hero h1 {
+  font-family: var(--v-font-display);
+  font-weight: 900;
+  font-size: clamp(26px, 4.6vw, 46px);
+  line-height: 1.4;
+  color: #fff;
+  margin-bottom: 14px;
+}
+.vlrh-hero h1 .vlrh-dot { color: var(--v-gold); }
+
+.vlrh-hero-sub {
+  font-size: 15.5px;
+  color: #D9E7EB;
+  max-width: 620px;
+  margin: 0 auto 32px;
+  line-height: 1.85;
+}
+.vlrh-hero-sub b { color: #fff; font-family: var(--v-font-display); font-weight: 700; }
+
+.vlrh-hero-actions { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 36px; }
+
+.vlrh-hero-mini {
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+  flex-wrap: wrap;
+  padding-top: 26px;
+  border-top: 1px solid rgba(255,255,255,.14);
+  max-width: 640px;
+  margin: 0 auto;
+}
+.vlrh-hero-mini div { text-align: center; }
+.vlrh-hero-mini b { display: block; font-family: var(--v-font-display); font-weight: 900; font-size: 26px; color: var(--v-gold); line-height: 1.2; }
+.vlrh-hero-mini small { display: block; font-family: var(--v-font-display); font-weight: 500; font-size: 11.5px; color: #9FC2CC; letter-spacing: 1px; margin-top: 4px; }
+
+.vlrh-section { padding: 80px 20px; background: var(--v-sand); }
+.vlrh-section-alt { background: var(--v-white); }
+.vlrh-container { max-width: 1180px; margin: 0 auto; }
+
+.vlrh-head { text-align: center; margin-bottom: 40px; }
+.vlrh-eyebrow {
+  display: inline-block;
+  font-family: var(--v-font-display);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--v-gold);
+  background: var(--v-gold-soft);
+  border-radius: 50px;
+  padding: 6px 18px;
+  margin-bottom: 14px;
+}
+.vlrh-title { font-family: var(--v-font-display); font-weight: 900; font-size: clamp(22px, 3.3vw, 34px); color: var(--v-marine); line-height: 1.4; }
+.vlrh-title .vlrh-dot { color: var(--v-gold); }
+.vlrh-sub { color: var(--v-muted); font-size: 15px; max-width: 620px; margin: 10px auto 0; line-height: 1.8; }
+
+/* About */
+.vlrh-about { display: grid; grid-template-columns: 1.4fr 1fr; gap: 26px; align-items: stretch; }
+.vlrh-about-text {
+  background: var(--v-white);
+  border: 1px solid var(--v-line);
+  border-radius: var(--v-radius);
+  padding: 32px 34px;
+  font-size: 15px;
+  line-height: 1.9;
+}
+.vlrh-about-text p { margin-bottom: 14px; }
+.vlrh-about-text p:last-child { margin-bottom: 0; }
+.vlrh-about-text b { font-family: var(--v-font-display); font-weight: 700; color: var(--v-marine); }
+
+.vlrh-about-stats {
+  background: linear-gradient(135deg, var(--v-marine) 0%, var(--v-marine-2) 100%);
+  border-radius: var(--v-radius);
+  padding: 26px 24px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.vlrh-about-stats::before {
+  content: "";
+  position: absolute;
+  top: -70px; left: -70px;
+  width: 180px; height: 180px;
+  border-radius: 50%;
+  border: 2px dashed rgba(192,145,62,.28);
+}
+.vlrh-stat { display: flex; align-items: center; gap: 14px; position: relative; z-index: 2; }
+.vlrh-stat-icon {
+  width: 44px; height: 44px; min-width: 44px;
+  border-radius: 12px;
+  background: rgba(192,145,62,.15);
+  border: 1px solid rgba(192,145,62,.35);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--v-gold);
+  font-size: 17px;
+}
+.vlrh-stat b { font-family: var(--v-font-display); font-weight: 900; font-size: 22px; color: #fff; line-height: 1.2; display: block; }
+.vlrh-stat b span { color: var(--v-gold); font-size: 16px; }
+.vlrh-stat small { font-family: var(--v-font-display); font-weight: 500; font-size: 12px; color: #9FC2CC; letter-spacing: .5px; display: block; margin-top: 2px; }
+
+/* Vision & mission */
+.vlrh-vm { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.vlrh-vm-card {
+  background: var(--v-white);
+  border: 1px solid var(--v-line);
+  border-radius: var(--v-radius);
+  padding: 30px;
+  box-shadow: var(--v-shadow);
+  position: relative;
+}
+.vlrh-vm-icon {
+  width: 52px; height: 52px;
+  border-radius: 14px;
+  background: var(--v-gold-soft);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--v-gold);
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+.vlrh-vm-card h3 { font-family: var(--v-font-display); font-weight: 800; font-size: 19px; color: var(--v-marine); margin-bottom: 10px; }
+.vlrh-vm-card p { font-size: 14.5px; color: var(--v-ink); line-height: 1.85; }
+
+/* Destinations */
+.vlrh-dest { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.vlrh-dest-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: var(--v-white);
+  border-radius: var(--v-radius);
+  box-shadow: var(--v-shadow);
+  overflow: hidden;
+  transition: transform .3s ease, box-shadow .3s ease;
+  position: relative;
+}
+.vlrh-dest-card:hover { transform: translateY(-6px); box-shadow: 0 22px 50px rgba(11,61,76,.18); }
+.vlrh-dest-img { height: 220px; background-size: cover; background-position: center; position: relative; }
+.vlrh-dest-img::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(11,61,76,0) 45%, rgba(11,61,76,.85) 100%);
+}
+.vlrh-dest-tag {
+  position: absolute; top: 16px; right: 16px; z-index: 2;
+  font-family: var(--v-font-display);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: #fff;
+  background: rgba(11,61,76,.65);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 50px;
+  padding: 5px 14px;
+}
+.vlrh-dest-title { position: absolute; bottom: 18px; right: 22px; left: 22px; z-index: 2; color: #fff; }
+.vlrh-dest-title h3 { font-family: var(--v-font-display); font-weight: 900; font-size: 22px; line-height: 1.3; margin-bottom: 2px; }
+.vlrh-dest-title h3 .vlrh-dot { color: var(--v-gold); }
+.vlrh-dest-title small { font-family: var(--v-font-display); font-weight: 500; font-size: 11.5px; letter-spacing: 1.5px; color: #C9DDE3; }
+.vlrh-dest-body { padding: 22px 26px; }
+.vlrh-dest-body p { font-size: 14px; color: var(--v-ink); line-height: 1.8; margin-bottom: 16px; }
+.vlrh-dest-projects { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
+.vlrh-dest-projects span {
+  font-family: var(--v-font-display);
+  font-weight: 600;
+  font-size: 12px;
+  background: var(--v-sand);
+  color: var(--v-marine);
+  border: 1px solid var(--v-line);
+  border-radius: 50px;
+  padding: 5px 12px;
+}
+.vlrh-dest-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--v-font-display);
+  font-weight: 800;
+  font-size: 14px;
+  color: var(--v-marine);
+  border-bottom: 2px solid var(--v-gold);
+  padding-bottom: 4px;
+  transition: .2s;
+}
+.vlrh-dest-card:hover .vlrh-dest-cta { color: var(--v-gold); }
+.vlrh-dest-cta i { transition: transform .25s ease; }
+.vlrh-dest-card:hover .vlrh-dest-cta i { transform: translateX(-5px); }
+
+/* Why Valora */
+.vlrh-why { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.vlrh-why-card {
+  background: var(--v-white);
+  border: 1px solid var(--v-line);
+  border-radius: var(--v-radius);
+  padding: 26px 22px;
+  text-align: center;
+  transition: .25s;
+}
+.vlrh-why-card:hover { border-color: var(--v-gold); transform: translateY(-4px); box-shadow: var(--v-shadow); }
+.vlrh-why-icon {
+  width: 56px; height: 56px;
+  margin: 0 auto 14px;
+  border-radius: 14px;
+  background: var(--v-gold-soft);
+  color: var(--v-gold);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+}
+.vlrh-why-card h4 { font-family: var(--v-font-display); font-weight: 800; font-size: 15px; color: var(--v-marine); margin-bottom: 8px; line-height: 1.4; }
+.vlrh-why-card p { font-size: 13.5px; color: var(--v-muted); line-height: 1.75; }
+
+/* Process */
+.vlrh-process { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; position: relative; }
+.vlrh-step {
+  background: var(--v-white);
+  border: 1px solid var(--v-line);
+  border-radius: var(--v-radius);
+  padding: 26px 22px;
+  text-align: center;
+  position: relative;
+}
+.vlrh-step-num {
+  position: absolute; top: -18px; right: 50%;
+  transform: translateX(50%);
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--v-marine) 0%, var(--v-marine-2) 100%);
+  color: var(--v-gold);
+  border: 3px solid var(--v-sand);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--v-font-display);
+  font-weight: 900;
+  font-size: 16px;
+}
+.vlrh-step h4 { margin-top: 16px; font-family: var(--v-font-display); font-weight: 800; font-size: 15.5px; color: var(--v-marine); margin-bottom: 8px; line-height: 1.4; }
+.vlrh-step p { font-size: 13.5px; color: var(--v-muted); line-height: 1.75; }
+
+@media (max-width: 900px) {
+  .vlrh-hero { min-height: 70vh; padding: 130px 16px 60px; }
+  .vlrh-about { grid-template-columns: 1fr; }
+  .vlrh-vm { grid-template-columns: 1fr; }
+  .vlrh-dest { grid-template-columns: 1fr; }
+  .vlrh-why { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .vlrh-process { grid-template-columns: 1fr 1fr; gap: 26px 16px; }
+  .vlrh-section { padding: 60px 16px; }
+}
+
+@media (max-width: 600px) {
+  .vlrh-hero { padding: 120px 14px 50px; }
+  .vlrh-hero h1 { font-size: 22px; }
+  .vlrh-hero-sub { font-size: 14px; margin-bottom: 26px; }
+  .vlrh-hero-actions .vlr-btn-primary, .vlrh-hero-actions .vlr-btn-wa { width: 100%; max-width: 320px; font-size: 14px; padding: 12px 20px; }
+  .vlrh-hero-mini { gap: 22px; padding-top: 22px; }
+  .vlrh-hero-mini b { font-size: 22px; }
+  .vlrh-about-text { padding: 24px 22px; font-size: 14px; }
+  .vlrh-vm-card { padding: 24px 22px; }
+  .vlrh-vm-card h3 { font-size: 17px; }
+  .vlrh-vm-card p { font-size: 13.5px; }
+  .vlrh-dest-img { height: 180px; }
+  .vlrh-dest-title h3 { font-size: 19px; }
+  .vlrh-dest-body { padding: 20px; }
+  .vlrh-dest-body p { font-size: 13.5px; }
+  .vlrh-why { grid-template-columns: 1fr; }
+  .vlrh-process { grid-template-columns: 1fr; gap: 30px; }
+  .vlrh-title { font-size: 20px; }
+  .vlrh-sub { font-size: 13.5px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vlrh-dest-card:hover, .vlrh-why-card:hover { transform: none; }
+  .vlrh-dest-card:hover .vlrh-dest-cta i { transform: none; }
+}

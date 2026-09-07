@@ -1,0 +1,198 @@
+/* ==========================================================================
+   Valora Realty — Privacy Policy page
+   ========================================================================== */
+
+.vlr-pp {
+  background: var(--v-sand);
+  padding: 150px 20px 70px;
+  line-height: 1.85;
+}
+
+.vlr-pp-hero {
+  max-width: 1180px;
+  margin: 0 auto 40px;
+  background: linear-gradient(135deg, var(--v-marine) 0%, var(--v-marine-2) 100%);
+  border-radius: 20px;
+  padding: 44px 40px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.vlr-pp-hero::before {
+  content: "";
+  position: absolute;
+  top: -100px; left: -100px;
+  width: 280px; height: 280px;
+  border-radius: 50%;
+  border: 2px dashed rgba(192,145,62,.28);
+}
+.vlr-pp-hero-inner { position: relative; z-index: 2; }
+
+.vlr-pp-eyebrow {
+  display: inline-block;
+  font-family: var(--v-font-display);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  color: var(--v-gold);
+  border: 1px solid rgba(192,145,62,.45);
+  border-radius: 50px;
+  padding: 6px 16px;
+  margin-bottom: 16px;
+}
+.vlr-pp-hero h1 { font-family: var(--v-font-display); font-weight: 900; font-size: clamp(26px, 4vw, 40px); line-height: 1.4; margin-bottom: 8px; }
+.vlr-pp-hero h1 .vlr-dot { color: var(--v-gold); }
+.vlr-pp-hero p { font-size: 14.5px; color: #C9DDE3; max-width: 620px; }
+
+.vlr-pp-updated {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 50px;
+  padding: 6px 15px;
+  font-family: var(--v-font-display);
+  font-weight: 600;
+  font-size: 12px;
+  color: #fff;
+}
+.vlr-pp-updated i { color: var(--v-gold); font-size: 11px; }
+
+.vlr-pp-layout {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.vlr-pp-toc {
+  position: sticky;
+  top: 100px;
+  background: var(--v-white);
+  border: 1px solid var(--v-line);
+  border-radius: var(--v-radius);
+  padding: 22px 20px;
+  max-height: calc(100vh - 130px);
+  overflow-y: auto;
+}
+.vlr-pp-toc h4 {
+  font-family: var(--v-font-display);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--v-gold);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--v-line);
+}
+.vlr-pp-toc ol { list-style: none; counter-reset: tocitem; }
+.vlr-pp-toc li { counter-increment: tocitem; margin-bottom: 2px; }
+.vlr-pp-toc a {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  text-decoration: none;
+  color: var(--v-ink);
+  font-family: var(--v-font-display);
+  font-weight: 500;
+  font-size: 13px;
+  padding: 8px 6px;
+  border-radius: 8px;
+  transition: .2s;
+  line-height: 1.5;
+}
+.vlr-pp-toc a::before { content: counter(tocitem, decimal-leading-zero); color: var(--v-gold); font-weight: 700; font-size: 11px; min-width: 20px; }
+.vlr-pp-toc a:hover { background: var(--v-sand); color: var(--v-marine); }
+
+.vlr-pp-content { background: var(--v-white); border: 1px solid var(--v-line); border-radius: var(--v-radius); padding: 36px 40px; }
+
+.vlr-pp-section { scroll-margin-top: 110px; padding-bottom: 28px; margin-bottom: 28px; border-bottom: 1px solid var(--v-line); }
+.vlr-pp-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.vlr-pp-section h2 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--v-font-display);
+  font-weight: 800;
+  font-size: 20px;
+  color: var(--v-marine);
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+.vlr-pp-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 34px; height: 34px;
+  border-radius: 9px;
+  background: var(--v-gold-soft);
+  color: var(--v-gold);
+  font-family: var(--v-font-display);
+  font-weight: 800;
+  font-size: 14px;
+}
+.vlr-pp-section p { font-size: 14.5px; color: var(--v-ink); margin-bottom: 12px; }
+.vlr-pp-section p:last-child { margin-bottom: 0; }
+.vlr-pp-section b { color: var(--v-marine); font-family: var(--v-font-display); font-weight: 700; }
+.vlr-pp-section ul { margin: 8px 0 14px; padding-right: 20px; }
+.vlr-pp-section li { font-size: 14.5px; color: var(--v-ink); margin-bottom: 8px; padding-right: 6px; }
+.vlr-pp-section li::marker { color: var(--v-gold); font-weight: 700; }
+.vlr-pp-section a:hover { color: var(--v-gold); }
+
+.vlr-pp-note {
+  background: var(--v-gold-soft);
+  border-right: 4px solid var(--v-gold);
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin: 14px 0;
+  font-size: 13.5px;
+  color: #6E4A1F;
+  line-height: 1.75;
+}
+.vlr-pp-note b { color: #5A3A15; }
+
+.vlr-pp-contact {
+  background: linear-gradient(135deg, var(--v-marine) 0%, var(--v-marine-2) 100%);
+  color: #fff;
+  border-radius: 14px;
+  padding: 22px 24px;
+  margin-top: 14px;
+}
+.vlr-pp-contact-row { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
+.vlr-pp-contact-row:last-child { margin-bottom: 0; }
+.vlr-pp-contact-row i {
+  width: 34px; height: 34px; min-width: 34px;
+  border-radius: 9px;
+  background: rgba(192,145,62,.18);
+  color: var(--v-gold);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px;
+}
+.vlr-pp-contact-row a { color: #fff !important; text-decoration: none !important; direction: ltr; font-family: var(--v-font-display); font-weight: 700; font-size: 15px; }
+.vlr-pp-contact-row a:hover { color: var(--v-gold) !important; }
+.vlr-pp-contact-row small { display: block; color: #9FC2CC; font-size: 11.5px; margin-top: 1px; font-family: var(--v-font-body); }
+
+@media (max-width: 980px) {
+  .vlr-pp-layout { grid-template-columns: 1fr; gap: 20px; }
+  .vlr-pp-toc { position: static; max-height: none; }
+  .vlr-pp-toc ol { display: grid; grid-template-columns: 1fr 1fr; gap: 0 12px; }
+}
+
+@media (max-width: 600px) {
+  .vlr-pp { padding: 120px 14px 50px; }
+  .vlr-pp-hero { padding: 32px 24px; margin-bottom: 26px; }
+  .vlr-pp-hero h1 { font-size: 22px; }
+  .vlr-pp-hero p { font-size: 13.5px; }
+  .vlr-pp-content { padding: 26px 22px; }
+  .vlr-pp-section h2 { font-size: 17px; gap: 10px; }
+  .vlr-pp-num { min-width: 30px; height: 30px; font-size: 13px; }
+  .vlr-pp-section p, .vlr-pp-section li { font-size: 13.5px; }
+  .vlr-pp-toc ol { grid-template-columns: 1fr; }
+  .vlr-pp-contact { padding: 18px; }
+  .vlr-pp-contact-row a { font-size: 14px; }
+}
