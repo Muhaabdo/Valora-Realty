@@ -1,0 +1,15 @@
+DirectoryIndex index.html
+
+RewriteEngine On
+
+# لو الزائر فتح رابط فيه .html، نعمل ريدايركت 301 للرابط النضيف من غيره
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# داخليًا: لو الرابط النضيف مطابق لملف .html موجود، نقدّمه من غير ما نغيّر الرابط الظاهر للزائر
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L]
+
+# صفحة 404 (اختياري - فعّلها لو عندك صفحة 404 مخصصة)
+# ErrorDocument 404 /404.html
