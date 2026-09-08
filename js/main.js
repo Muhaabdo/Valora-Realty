@@ -41,18 +41,30 @@
   if (cookies) {
     var accept = document.getElementById("vlrCookiesAccept");
     var close = document.getElementById("vlrCookiesClose");
-    var STORAGE_KEY = "vlr_cookies_accepted";
+    var STORAGE_KEY = "vlr_cookies_shown";
+    var AUTO_HIDE_MS = 10000;
 
-    var alreadyAccepted = false;
-    try { alreadyAccepted = localStorage.getItem(STORAGE_KEY) === "1"; } catch (e) {}
+    var alreadyShown = false;
+    try { alreadyShown = sessionStorage.getItem(STORAGE_KEY) === "1"; } catch (e) {}
 
-    if (!alreadyAccepted) {
-      setTimeout(function () { cookies.classList.add("is-visible"); }, 800);
+    var autoHideTimer = null;
+
+    function markShown() {
+      try { sessionStorage.setItem(STORAGE_KEY, "1"); } catch (e) {}
     }
 
     function dismiss() {
       cookies.classList.remove("is-visible");
-      try { localStorage.setItem(STORAGE_KEY, "1"); } catch (e) {}
+      if (autoHideTimer) clearTimeout(autoHideTimer);
+      markShown();
+    }
+
+    if (!alreadyShown) {
+      setTimeout(function () {
+        cookies.classList.add("is-visible");
+        markShown();
+        autoHideTimer = setTimeout(dismiss, AUTO_HIDE_MS);
+      }, 800);
     }
 
     accept && accept.addEventListener("click", dismiss);
