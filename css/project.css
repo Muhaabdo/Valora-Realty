@@ -370,6 +370,8 @@
 .vlrs-pcard-stat small { font-size: 9.5px; color: var(--v-muted); font-weight: 500; }
 
 .vlrs-pcard-body .vlrs-price { margin: 0 0 14px; }
+.vlrs-pcard-stats.vlrs-cols-2 { grid-template-columns: repeat(2, 1fr); }
+.vlrs-pcard-body .vlrs-hook { margin: 0 0 14px; }
 
 .vlrs-legal-hint {
   display: flex;
