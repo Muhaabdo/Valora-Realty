@@ -103,7 +103,7 @@
 
 .vlrs-content { padding: 56px 20px 60px; }
 .vlrs-container { max-width: 1180px; margin: 0 auto; }
-#units { scroll-margin-top: 90px; }
+#units, #about { scroll-margin-top: 90px; }
 
 .vlrs-head { text-align: center; margin-bottom: 30px; }
 .vlrs-eyebrow {
@@ -286,6 +286,181 @@
   transition: .25s;
 }
 .vlrs-call-btn:hover { background: var(--v-marine); color: #fff; }
+
+/* Project cards (multi-project pages: ORA, Sodic, ...) */
+.vlrs-pgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; }
+.vlrs-pcard {
+  background: var(--v-white);
+  border-radius: var(--v-radius);
+  box-shadow: var(--v-shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform .25s, box-shadow .25s;
+}
+.vlrs-pcard:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(11,61,76,.16); }
+
+.vlrs-pcard-media {
+  position: relative;
+  height: 190px;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--v-marine);
+}
+.vlrs-pcard-tag {
+  position: absolute;
+  top: 14px; inset-inline-start: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--v-font-display);
+  font-weight: 700;
+  font-size: 11.5px;
+  color: #fff;
+  background: rgba(11,61,76,.55);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 50px;
+  padding: 5px 14px;
+}
+.vlrs-pcard-tag i { color: var(--v-gold); font-size: 11px; }
+.vlrs-pcard-fade {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 34px 18px 14px;
+  background: linear-gradient(180deg, transparent 0%, rgba(6,33,42,.88) 100%);
+}
+.vlrs-pcard-fade h3 { font-family: var(--v-font-display); font-weight: 800; font-size: 19px; color: #fff; }
+.vlrs-pcard-fade h3 .vlrs-dot { color: var(--v-gold); }
+
+.vlrs-pcard-body { padding: 18px 20px 20px; display: flex; flex-direction: column; flex: 1; }
+
+.vlrs-pcard-types { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.vlrs-pcard-types span {
+  font-family: var(--v-font-display);
+  font-weight: 600;
+  font-size: 11px;
+  color: var(--v-marine);
+  background: var(--v-sand);
+  border-radius: 50px;
+  padding: 5px 12px;
+}
+
+.vlrs-pcard-desc {
+  font-size: 12.5px;
+  color: var(--v-muted);
+  line-height: 1.75;
+  margin: 0 0 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px dashed var(--v-line);
+}
+
+.vlrs-pcard-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+  padding: 14px 6px;
+  background: var(--v-sand);
+  border-radius: var(--v-radius-btn);
+}
+.vlrs-pcard-stat { text-align: center; }
+.vlrs-pcard-stat i { color: var(--v-gold); font-size: 14px; margin-bottom: 5px; display: block; }
+.vlrs-pcard-stat b { display: block; font-family: var(--v-font-display); font-weight: 800; font-size: 14px; color: var(--v-marine); line-height: 1.3; }
+.vlrs-pcard-stat small { font-size: 9.5px; color: var(--v-muted); font-weight: 500; }
+
+.vlrs-pcard-body .vlrs-price { margin: 0 0 14px; }
+
+.vlrs-legal-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+  max-width: 680px;
+  margin: 4px auto 36px;
+  font-size: 12px;
+  color: var(--v-muted);
+  line-height: 1.7;
+}
+.vlrs-legal-hint i { color: var(--v-gold); font-size: 13px; flex-shrink: 0; }
+
+@media (max-width: 480px) {
+  .vlrs-pcard-media { height: 160px; }
+  .vlrs-pcard-fade h3 { font-size: 17px; }
+  .vlrs-pcard-stat b { font-size: 12.5px; }
+  .vlrs-pcard-stat small { font-size: 9px; }
+  .vlrs-legal-hint { font-size: 11px; margin-bottom: 28px; }
+}
+
+/* ---------- About the developer (brand story block) ---------- */
+
+.vlrs-about { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 24px; align-items: stretch; margin-bottom: 34px; }
+
+.vlrs-about-card {
+  background: linear-gradient(160deg, var(--v-marine) 0%, var(--v-marine-2) 100%);
+  border-radius: var(--v-radius);
+  padding: 30px 26px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.vlrs-about-card::before { content: ""; position: absolute; top: -70px; inset-inline-end: -70px; width: 180px; height: 180px; border-radius: 50%; border: 2px dashed rgba(192,145,62,.3); }
+
+.vlrs-about-since { font-family: var(--v-font-display); font-weight: 700; font-size: 11px; letter-spacing: 2.5px; color: var(--v-gold-soft); position: relative; z-index: 2; }
+.vlrs-about-year { font-family: var(--v-font-display); font-weight: 900; font-size: 40px; color: #fff; line-height: 1.1; margin: 4px 0 6px; position: relative; z-index: 2; }
+.vlrs-about-year-sub { font-size: 12.5px; color: #C9DDE3; line-height: 1.6; max-width: 230px; position: relative; z-index: 2; margin-bottom: 22px; }
+
+.vlrs-about-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 22px; position: relative; z-index: 2; }
+.vlrs-about-stat { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16); border-radius: var(--v-radius-btn); padding: 13px 10px; }
+.vlrs-about-stat b { display: block; font-family: var(--v-font-display); font-weight: 900; font-size: 19px; color: var(--v-gold); }
+.vlrs-about-stat small { font-size: 10.5px; color: #C9DDE3; font-weight: 500; }
+
+.vlrs-about-plabel { font-size: 11.5px; color: #9FC2CC; font-weight: 600; margin-bottom: 10px; position: relative; z-index: 2; }
+.vlrs-about-projects { display: flex; flex-wrap: wrap; gap: 8px; position: relative; z-index: 2; }
+.vlrs-about-projects span { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.22); border-radius: 50px; padding: 6px 14px; font-family: var(--v-font-display); font-weight: 700; font-size: 11.5px; }
+
+.vlrs-about-text { background: var(--v-white); border-radius: var(--v-radius); box-shadow: var(--v-shadow); padding: 28px 30px; display: flex; flex-direction: column; }
+.vlrs-about-text p { font-size: 14.5px; color: var(--v-ink); line-height: 1.85; margin-bottom: 14px; }
+.vlrs-about-text p b { font-family: var(--v-font-display); font-weight: 700; color: var(--v-marine); }
+
+.vlrs-about-quote { display: flex; gap: 14px; align-items: flex-start; background: var(--v-sand); border-radius: var(--v-radius-btn); padding: 16px 18px; margin: 6px 0 20px; border-inline-start: 3px solid var(--v-gold); }
+.vlrs-about-quote-avatar { width: 42px; height: 42px; min-width: 42px; border-radius: 50%; background: linear-gradient(135deg, var(--v-marine), var(--v-marine-2)); color: #fff; display: flex; align-items: center; justify-content: center; font-family: var(--v-font-display); font-weight: 800; font-size: 14px; }
+.vlrs-about-quote-body b { display: block; font-family: var(--v-font-display); font-weight: 700; font-size: 13.5px; color: var(--v-marine); }
+.vlrs-about-quote-body span { display: block; font-size: 11px; color: var(--v-muted); font-weight: 500; margin-bottom: 6px; }
+.vlrs-about-quote-body p { font-size: 13px; color: var(--v-ink); font-style: italic; line-height: 1.7; margin: 0; }
+
+.vlrs-about-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+.vlrs-about-pills span { display: inline-flex; align-items: center; gap: 6px; background: var(--v-gold-soft); color: #8A5E1E; border-radius: 50px; padding: 7px 14px; font-family: var(--v-font-display); font-weight: 700; font-size: 12px; }
+.vlrs-about-pills i { color: var(--v-gold); font-size: 12px; }
+
+.vlrs-about-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: auto; }
+.vlrs-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--v-marine);
+  border: 2px solid var(--v-marine);
+  text-decoration: none;
+  font-family: var(--v-font-display);
+  font-weight: 700;
+  font-size: 13.5px;
+  border-radius: var(--v-radius-btn);
+  padding: 12px 24px;
+  transition: .25s;
+}
+.vlrs-btn-outline:hover { background: var(--v-marine); color: #fff; }
+
+@media (max-width: 900px) {
+  .vlrs-about { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .vlrs-about-text { padding: 22px 18px; }
+  .vlrs-about-year { font-size: 32px; }
+  .vlrs-about-quote { flex-direction: column; }
+}
 
 /* Delivery timeline */
 .vlrs-delivery {
